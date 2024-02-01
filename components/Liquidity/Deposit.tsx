@@ -7,7 +7,7 @@ const Deposit = () => {
     <BigBox>
       <div className="flex items-center justify-between w-full">
         <div className="w-1/2">
-          <h4 className="mb-3 text-xl text-white">Liquidity</h4>
+          <h4 className="mb-3 text-xl text-white">Vote</h4>
           <p className="mb-4 text-sm text-shark-100">
             Voters earn a share of transaction fees and incentives for helping govern how emissions are distributed.
           </p>
