@@ -29,6 +29,7 @@
 .icon-search:before { content: '\e805'; } /* '' */
 .icon-logout:before { content: '\e806'; } /* '' */
 .icon-arrow:before { content: '\e807'; } /* '' */
+.icon-menu:before { content: '\e808'; } /* '' */
 .icon-link:before { content: '\e80a'; } /* '' */
 .icon-bell:before { content: '\e814'; } /* '' */
 .icon-browser:before { content: '\e815'; } /* '' */
@@ -65,3 +66,5 @@
 .icon-download:before { content: '\e858'; } /* '' */
 .icon-compass:before { content: '\e859'; } /* '' */
 .icon-swap:before { content: '\e85a'; } /* '' */
+.icon-check:before { content: '\e85b'; } /* '' */
+.icon-x-circle:before { content: '\e85c'; } /* '' */
