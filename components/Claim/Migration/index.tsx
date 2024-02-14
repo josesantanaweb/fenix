@@ -1,64 +1,68 @@
 'use client'
-
-import { useState } from 'react'
-import { MainBox } from '@/components/UI'
+import MainBox from '@/components/Common/Boxes/MainBox'
 import { EXCHANGE_LIST } from '../data'
 import InfoBox from '@/components/Common/InfoBox'
+import { Button } from '@/components/UI'
 
-const Migration = () => {
+interface MigrationsProps {
+  isConnected: boolean
+}
 
-  const [show, setShow] = useState<boolean>(false)
+const Migration = ({ isConnected }: MigrationsProps) => {
+  // const [show, setShow] = useState<boolean>(false) ???
 
   return (
     <MainBox>
-      <div className="flex flex-col justify-between w-full md:gap-10 md:flex-row md:items-center">
-        <div className="w-full my-5 md:w-[50%] xl:w-[40%] md:m-0">
+      <div className="flex flex-col items-center justify-between w-full xl:flex-row bg-shark-400 bg-opacity-40 rounded-2xl xl:rounded-none py-5 xl:py-0 xl:px-10 px-5">
+        <div className="lg:ms-5 w-full xl:w-1/2">
           <h4 className="mb-3 text-xl text-white">Migration Claim</h4>
-          <p className="mb-4 text-sm text-shark-100">
-            Deposit your CHR Tokens in order to migrate to our new Protocol!
-          </p>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="flex items-center justify-between w-full gap-3 px-4 py-2 rounded-lg md:gap-5 2xl:gap-8 2xl:justify-start bg-shark-400 bg-opacity-40">
-              <div>
-                <h5 className="mb-1 text-xs text-shark-100">Migration</h5>
-                <p className="text-xs text-green-500">Open</p>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h5 className="flex items-center justify-center mb-1 text-xs text-center text-white rounded-lg bg-shark-400 w-7 h-7">
-                  3
-                </h5>
-                <p className="text-xs text-shark-100">Days</p>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h5 className="flex items-center justify-center mb-1 text-xs text-center text-white rounded-lg bg-shark-400 w-7 h-7">
-                  14
-                </h5>
-                <p className="text-xs text-shark-100">Hours</p>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h5 className="flex items-center justify-center mb-1 text-xs text-center text-white rounded-lg bg-shark-400 w-7 h-7">
-                  45
-                </h5>
-                <p className="text-xs text-shark-100">Minutes</p>
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <h5 className="flex items-center justify-center mb-1 text-xs text-center text-white rounded-lg bg-shark-400 w-7 h-7">
-                  36
-                </h5>
-                <p className="text-xs text-shark-100">Seconds</p>
-              </div>
+          <p className="mb-4 text-sm text-shark-100">Deposit your CHR ecosystem tokens to migrate.</p>
+          <div className="flex lg:gap-5 gap-3 box bg-shark-400 bg-opacity-40 w-full xl-w-[280px] lg:h-auto lg:w-96 rounded-lg mb-5 items-center justify-center lg:justify-normal">
+            <div>
+              <p className="text-shark-100 font-bold text-[12px]">Migration</p>
+              <p className="text-green-400 text-[12px]">Open</p>
+            </div>
+            <div className="flex items-center flex-col">
+              <span className="text-white text-xs bg-shark-300 flex items-center p-2 h-[27px] bg-opacity-30  rounded-md">
+                30
+              </span>
+              <p className="text-shark-100 text-sm">Days</p>
+            </div>
+            <div className="flex items-center flex-col">
+              <span className="text-white bg-shark-300 text-xs flex items-center p-2 h-[27px] bg-opacity-30  rounded-md">
+                30
+              </span>
+              <p className="text-shark-100 text-sm">Hours</p>
+            </div>
+            <div className="flex items-center flex-col">
+              <span className="text-white bg-shark-300 text-xs flex items-center p-2 h-[27px] bg-opacity-30  rounded-md">
+                30
+              </span>
+              <p className="text-shark-100 text-sm">Minutes</p>
+            </div>
+            <div className="flex items-center flex-col">
+              <span className="text-white bg-shark-300 flex text-xs  items-center p-2 h-[27px] bg-opacity-30  rounded-md">
+                30
+              </span>
+              <p className="text-shark-100 text-sm">Seconds</p>
             </div>
           </div>
+          <div className="flex flex-col gap-2 mb-8 xl:mb-14 md:flex-row">
+            <Button variant="primary" className="flex gap-3">
+              <span className={`text-white ${isConnected ? 'icon-coin-received' : 'icon-wallet'}`}></span>
+              {isConnected ? `Check Tokens` : `Connect your Wallet`}
+            </Button>
+          </div>
           <div className="flex items-center gap-3">
-            <p className="flex items-center gap-3 text-sm cursor-pointer text-shark-100 hover:text-outrageous-orange-500">
-              <span className="text-lg icon-link"></span>
+            <p className="flex items-center text-[12px] gap-3 lg:text-sm cursor-pointer text-shark-100 hover:text-outrageous-orange-500">
+              <span className="lg:text-lg icon-link"></span>
               About Migration
             </p>
           </div>
         </div>
-        <div className="relative flex flex-col w-full md:w-[40%] max-h-[390px] overflow-y-auto overflow-x-none pr-4">
+        <div className="relative overflow-y-auto overflow-x-hidden h-[320px] flex flex-col w-full xl:w-[40%]">
           {EXCHANGE_LIST.map((exchange, index) => (
-            <InfoBox key={index} data={exchange} setShowTooltip={setShow} hasTooltip />
+            <InfoBox key={index} data={exchange} hasTooltip />
           ))}
         </div>
       </div>

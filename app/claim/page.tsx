@@ -1,12 +1,17 @@
-/* eslint-disable import/no-default-export */
 import Claim from '@/components/Claim'
+import Decorator from '@/components/Common/Layout/Background'
 
-export default function ClaimPage() {
+const ClaimPage = () => {
   return (
     <main>
-      <div className="mx-auto md:p-6">
+      <div className="container">
         <Claim />
+
+
+        <Decorator />
       </div>
     </main>
   )
 }
+
+export default ClaimPage

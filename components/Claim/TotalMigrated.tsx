@@ -3,11 +3,11 @@
 const TotalMigrated = () => {
 
   return (
-    <div className="relative flex items-center w-full xl:w-2/4 2xl:w-1/3 md:h-[62px] px-4 bg-shark-400 bg-opacity-40 py-2 rounded-lg gap-2">
-      <div className="items-center justify-center hidden w-8 h-8 p-2 rounded-lg md:flex bg-shark-400 bg-opacity-60">
+    <div className="relative flex items-center w-full xl:w-2/4 2xl:w-1/3 md:h-[62px] px-4 py-2 rounded-lg gap-2 total-migrated-box min-h-[86px]">
+      <div className="p-3 justify-center w-10 h-10 rounded-lg bg-shark-400 bg-opacity-60 hidden xl:flex">
         <span
-          className={`inline-block text-xl text-transparent bg-gradient-to-r from-outrageous-orange-500 to-festival-500 bg-clip-text icon-compass`}
-        ></span>
+          className={` text-xl text-transparent bg-gradient-to-r items-center flex justify-center from-outrageous-orange-500 to-festival-500 bg-clip-text icon-compass`}
+        />
       </div>
       <div className="w-full">
         <p className="mb-3 text-xs text-shark-100 md:mb-0">Total Migrated Amount to FNX</p>
