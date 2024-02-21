@@ -1,23 +1,23 @@
 export const MENU_LINKS = [
   {
     name: 'Trade',
-    href: '/trade',
+    href: '/trade/dca',
   },
   {
     name: 'Dashboard',
-    href: '/dashboard',
+    href: '/',
   },
   {
     name: 'Liquidity',
-    href: '/liquidity',
+    href: '/',
   },
   {
     name: 'Vote',
-    href: '/vote',
+    href: '/',
   },
   {
     name: 'Lock',
-    href: '/lock',
+    href: '/',
   },
   {
     name: 'Migration',

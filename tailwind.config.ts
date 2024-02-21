@@ -42,9 +42,10 @@ const config: Config = {
         'button-primary':
           'linear-gradient(90deg, rgba(254, 94, 53, 0.80) 10.49%, rgba(246, 119, 2, 0.80) 92.04%, rgba(255, 239, 118, 0.80) 158.76%);',
         'button-primary-hover': 'linear-gradient(90deg, #FE5E35 10.49%, #F67702 92.04%, #FFEF76 158.76%)',
-        // Background images
+        'error-404': 'url("/static/images/404/Background_1.svg")',
         'modal-signin': 'url("/static/images/modals/modal-signin.svg")',
-        'hours': 'url("/static/images/claim/bg-hours.svg")'
+        'fenix-slider':'url("/static/images/vote/fenix-slider.svg")',
+        hours: 'url("/static/images/claim/bg-hours.svg")',
       },
       lineHeight: {
         normal: 'normal',
@@ -55,11 +56,12 @@ const config: Config = {
           '200': '#474C51',
           '300': '#393E44',
           '400': '#292D32', // main
-          '500': '#1C1F21',
-          '600': '#0D0F10',
+          '500': '#16181a',
+          '600': '#0A0A0A',
           '700': '#000000',
           '800': '#000000',
           '900': '#111315',
+          '950': '#262C33',
         },
         'outrageous-orange': {
           '100': '#ffe2d4',
@@ -94,19 +96,6 @@ const config: Config = {
           '700': '#a26306',
           '800': '#864d0d',
           '900': '#723f11',
-        },
-        'woodsmoke': {
-          '50': '#f4f6f7',
-          '100': '#e4e7e9',
-          '200': '#cbd1d6',
-          '300': '#a7b0b9',
-          '400': '#7b8795',
-          '500': '#606c7a',
-          '600': '#535b67',
-          '700': '#474e57',
-          '800': '#3f434b',
-          '900': '#383c41',
-          '950': '#0e0f11',
         },
       },
       screens: {

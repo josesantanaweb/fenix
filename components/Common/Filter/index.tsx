@@ -2,23 +2,36 @@
 
 import { Button } from '@/components/UI'
 
-const Filter = () => {
+interface FilterProps {
+  options: string[]
+  currentTab: string
+  setCurrentTab: (parameter: string) => void
+}
+
+const Filter = ({ options, currentTab, setCurrentTab }: FilterProps) => {
+
+  const handlerChange = (parameter: string) => {
+    setCurrentTab(parameter)
+  }
   return (
-    <div className="flex flex-col xl:flex-row items-center gap-2 px-3 py-2 filter-box 
-    rounded-lg justify-start md:gap-5 w-full xl:w-2/3  bg-opacity-40">
-      <Button className="h-[40px] md:h-auto w-full xl-w-auto">Concentrated</Button>
-      <Button variant="default" className="h-[40px] md:h-auto w-full xl-w-auto ">
-       Stable
-      </Button>
-      <Button variant="default" className="h-[40px] md:h-auto w-full xl-w-auto">
-        Volatile
-      </Button>
-      <Button variant="default" className="h-[40px] md:h-auto w-full xl-w-auto">
-        Single Token Deposit
-      </Button>
-      <Button variant="default" className="h-[40px] md:h-auto w-full xl-w-auto">
-        All Pools
-      </Button>
+    <div
+      className="flex flex-col items-center justify-start w-full gap-2 px-3 
+      py-2 rounded-lg xl:flex-row filter-box md:gap-5 xl:w-full bg-opacity-40"
+    >
+      {options.map((option, index) => {
+        return (
+          <Button
+            key={index}
+            onClick={()=>{
+              handlerChange(option.toUpperCase())
+            }}
+            variant={currentTab === option.toString().toUpperCase() ? 'primary' : 'default'}
+            className="h-[40px] md:h-auto w-full xl:w-auto"
+          >
+            {option}
+          </Button>
+        )
+      })}
     </div>
   )
 }
