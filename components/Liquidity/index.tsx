@@ -23,16 +23,18 @@ const Liquidity = () => {
   const filterData = currentTab !== "ALL POOLS" ? DATA_ROW.filter(row => row.type === currentTab) : DATA_ROW
 
   return (
-    <section className="my-5 xl:my-10">
-      <div className="flex items-center gap-10 justify-around flex-col xl:flex-row mb-10 xl:h-[450px]">
-        <Deposit />
+    <section>
+      <div className="flex flex-col items-center gap-5 py-5 2xl:flex-row">
+        <div className="w-full 2xl:w-3/4">
+          <Deposit />
+        </div>
         <Steps steps={STEPS} />
       </div>
       <h5 className="mb-4 text-lg text-white">Liquidity Pools</h5>
 
       <div className="flex flex-col justify-between gap-5 mb-10 md:items-center xl:flex-row">
         <Filter options={OPTIONS_FILTER} currentTab={currentTab} setCurrentTab={setCurrentTab} />
-        <div className="xl:w-1/3">
+        <div className="w-full xl:w-1/3">
           <Search />
         </div>
       </div>
@@ -73,7 +75,7 @@ const Liquidity = () => {
           <p className="text-sm text-shark-100">Showing 2 out of 2 migrations...</p>
           <Pagination className="mx-auto" numberPages={7} />
           <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 px-4 transition-colors border rounded-lg border-shark-300 bg-shark-400 bg-opacity-40 hover:bg-outrageous-orange-400">
-            <span className="text-lg icon-cog text-white"></span>
+            <span className="text-lg icon-cog text-white cursor-pointer"></span>
           </div>
         </div>
         <div className="xl:hidden">

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import RowSkeleton from '@/components/UI/Table/TableSkeleton'
 import { TableHead, TableBody, TableCell, TableRow, Button, Pagination } from '@/components/UI'
+
 const MyLocks = () => {
   const [loading, setLoading] = useState(true)
 
@@ -19,12 +20,12 @@ const MyLocks = () => {
         <TableHead
           items={[
             { text: 'Lock ID', className: 'text-left w-[30%]', sortable: true },
-            { text: 'Rebase APR ', className: 'text-center w-[10%]', sortable: true },
+            // { text: 'Rebase APR ', className: 'text-center w-[10%]', sortable: true },
             { text: 'Lock Amount', className: 'text-left w-[10%]', sortable: true },
             { text: 'Voting Power', className: 'text-left w-[10%]', sortable: true },
             { text: 'Unlock Date', className: 'text-left w-[10%]', sortable: true },
             { text: 'Vote Status', className: 'text-center w-[15%]', sortable: true },
-            { text: 'Action', className: 'text-right w-[15%]', sortable: false },
+            { text: 'Action', className: 'text-right w-[25%]', sortable: false },
           ]}
         />
 
@@ -55,9 +56,9 @@ const MyLocks = () => {
                 </div>
               </TableCell>
               {/* firts */}
-              <TableCell className="w-[10%]  flex items-center justify-center">
+              {/* <TableCell className="w-[10%]  flex items-center justify-center">
                   <p className="text-sm">34.58%</p>
-              </TableCell>
+              </TableCell> */}
               {/* second */}
               <TableCell className="w-[10%]">
                 <div className="flex items-center gap-2">
@@ -92,14 +93,15 @@ const MyLocks = () => {
               </TableCell>
               {/* fifth */}
               <TableCell className="w-[15%] flex justify-center">
-                <span className="flex items-center bg-opacity-40 w-[105px] text-sm justify-center px-5 py-1
+                <span className="flex items-center bg-opacity-20 w-[105px] text-sm justify-center px-5 py-1
                  text-white border border-solid border-green-400
-                 rounded-xl bg-shark-400">
+                 bg-green-500
+                 rounded-xl ">
                   Voted
                 </span>
               </TableCell>
               {/* sixth */}
-              <TableCell className="w-[15%]">
+              <TableCell className="w-[25%]">
                 <div className="flex justify-end w-full">
                   <Button variant="tertiary" className="h-[38px] w-[90px] bg-opacity-40">
                    <span className='text-sm'>
@@ -118,7 +120,7 @@ const MyLocks = () => {
         <p className="text-sm text-shark-100">Showing 2 out of 2 migrations...</p>
         <Pagination className="mx-auto" numberPages={7} />
         <div className="flex items-center justify-center flex-shrink-0 w-12 h-12 px-4 transition-colors border rounded-lg border-shark-300 bg-shark-400 bg-opacity-40 hover:bg-outrageous-orange-400">
-          <span className="text-lg text-white icon-cog"></span>
+          <span className="text-lg text-white icon-cog cursor-pointer"></span>
         </div>
       </div>
     </div>
