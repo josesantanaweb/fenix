@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Image from 'next/image'
-import { Button, PaginationMobile } from '@/components/UI'
+import { Button } from '@/components/UI'
 import InputRange from '@/components/UI/SliderRange/InputRange'
 type IRow = {
   type: string
@@ -11,9 +11,10 @@ interface RowDataProps {
   changeValue: number
   setChangeValue: (value: number) => void
   activeVote: boolean
+  activeSlider?: boolean
 }
 
-const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote }: RowDataProps) => {
+const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote, activeSlider }: RowDataProps) => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -26,14 +27,14 @@ const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote }: RowData
         <div className="flex gap-[9px] items-center">
           <div className="relative flex items-center">
             <Image
-              src="/static/images/tokens/FNX.png"
+              src="/static/images/tokens/FNX.svg"
               alt="token"
               className="w-8 h-8 rounded-full"
               width={32}
               height={32}
             />
             <Image
-              src="/static/images/tokens/ETH.png"
+              src="/static/images/tokens/ETH.svg"
               alt="token"
               className="w-8 h-8 -ml-5 rounded-full"
               width={32}
@@ -92,7 +93,7 @@ const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote }: RowData
             <div className="flex flex-col gap-2.5 mt-[21px] mb-2.5">
               <div
                 className="flex items-start justify-between border border-shark-300 p-4 rounded-lg
-                  
+
                   "
               >
                 <div className="flex items-center gap-1">
@@ -117,7 +118,7 @@ const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote }: RowData
                   <div className="flex gap-2.5 text-shark-100">
                     <div className="flex items-center gap-[5px]">
                       <Image
-                        src="/static/images/tokens/ETH.png"
+                        src="/static/images/tokens/ETH.svg"
                         alt="token"
                         className="w-2.5 h-2.5 rounded-full"
                         width={10}
@@ -139,7 +140,7 @@ const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote }: RowData
 
                     <p className="flex gap-2 mt-2 text-sm text-shark-100">
                       <Image
-                        src="/static/images/tokens/ETH.png"
+                        src="/static/images/tokens/ETH.svg"
                         alt="token"
                         className="w-5 h-5 rounded-full"
                         width={20}
@@ -152,7 +153,7 @@ const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote }: RowData
                       <div className="flex gap-2">
                         <p className="flex items-center gap-2 text-sm text-shark-100">
                           <Image
-                            src="/static/images/tokens/FNX.png"
+                            src="/static/images/tokens/FNX.svg"
                             alt="token"
                             className="w-5 h-5 rounded-full"
                             width={20}
@@ -162,7 +163,7 @@ const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote }: RowData
                         </p>
                         <p className="flex items-center gap-2 text-sm text-shark-100">
                           <Image
-                            src="/static/images/tokens/ETH.png"
+                            src="/static/images/tokens/ETH.svg"
                             alt="token"
                             className="w-5 h-5 rounded-full"
                             width={20}
@@ -177,29 +178,37 @@ const MobileRowVote = ({ row, changeValue, setChangeValue, activeVote }: RowData
               </div>
 
               <div className="flex items-start justify-between border border-shark-300 p-4 rounded-lg">
-                <div className="w-full">
-                  <div>
-                    <InputRange
-                      step={1}
-                      max={100}
-                      min={0}
-                      height={7}
-                      value={changeValue}
-                      onChange={setChangeValue}
-                      thumbSize={18}
-                      disabled={!activeVote}
-                    />
-                    <div className="flex justify-between text-sm text-shark-100">
-                      <p>0%</p>
-                      <p>100%</p>
+                {activeSlider ? (
+                  <div className="w-full">
+                    <div>
+                      <InputRange
+                        step={1}
+                        max={100}
+                        min={0}
+                        height={7}
+                        value={changeValue}
+                        onChange={setChangeValue}
+                        thumbSize={18}
+                        disabled={!activeVote}
+                      />
+                      <div className="flex justify-between text-sm text-shark-100">
+                        <p>0%</p>
+                        <p>100%</p>
+                      </div>
                     </div>
                   </div>
-                </div>
+                ) : (
+                  <div className="w-full">
+                    <Button variant="tertiary" className="flex gap-2 w-full items-center">
+                      <span className="icon-logout"></span>
+                      Claim Rewards
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
           </>
         )}
-
       </div>
     </>
   )

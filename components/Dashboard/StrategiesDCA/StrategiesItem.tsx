@@ -16,14 +16,14 @@ const StrategiesItem = () => {
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="flex items-center">
-            <Image src="/static/images/tokens/USDC.png" width={20} height={20} alt="token" className="w-6 h-6" />
-            <Image src="/static/images/tokens/FNX.png" width={20} height={20} alt="token" className="w-6 h-6 -ml-2" />
+            <Image src="/static/images/tokens/USDC.svg" width={20} height={20} alt="token" className="w-6 h-6" />
+            <Image src="/static/images/tokens/FNX.svg" width={20} height={20} alt="token" className="w-6 h-6 -ml-2" />
           </div>
           <div className="">
-            <h3 className="text-white text-base">USDC/FNX</h3>
+            <h3 className="text-white text-sm">USDC/FNX</h3>
             <div className="flex items-center gap-1">
               <span className="icon-sand-clock text-outrageous-orange-500"></span>
-              <p className="text-white text-sm">19 Minutes</p>
+              <p className="text-white text-xs">19 Minutes</p>
             </div>
           </div>
         </div>
